@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    tools {
+        nodejs 'NodeJS' 
+    }
 
     stages {
         stage('Clone Repository') {
@@ -10,11 +14,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
-            }
-        }
-        stage('Run Application') {
-            steps {
-                bat 'node app.js'
             }
         }
         stage('Run Tests') {
