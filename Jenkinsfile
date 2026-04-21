@@ -16,7 +16,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm ci'
+                bat 'npm install'
             }
         }
 
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                echo 'Build stage completed'
+                echo 'Build Completed'
             }
         }
     }
