@@ -1,7 +1,18 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'Node18'
+    }
+
     stages {
+
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/AkashB29/ci-node-app.git'
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
@@ -15,6 +26,11 @@ pipeline {
             }
         }
 
+        stage('Build Application') {
+            steps {
+                echo 'Build stage completed'
+            }
+        }
     }
 
     post {
