@@ -7,27 +7,26 @@ pipeline {
                 git 'https://github.com/AkashB29/ci-node-app.git'
             }
         }
+
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'npm ci'
             }
         }
-        stage('Run Application') {
-            steps {
-                bat 'node app.js'
-            }
-        }
+
         stage('Run Tests') {
             steps {
-                bat 'node test'
+                bat 'npm test'
             }
         }
     }
-    post{
-        success{
+
+    post {
+        success {
             echo 'CI Pipeline Success'
         }
-        failure{
+
+        failure {
             echo 'CI Pipeline Failed'
         }
     }
