@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/AkashB29/ci-node-app.git'
+                git branch: 'main', url: 'https://github.com/AkashB29/ci-node-app.git'
             }
         }
         stage('Install Dependencies') {
@@ -19,15 +19,15 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                bat 'node test'
+                bat 'npm test'
             }
         }
     }
-    post{
-        success{
+    post {
+        success {
             echo 'CI Pipeline Success'
         }
-        failure{
+        failure {
             echo 'CI Pipeline Failed'
         }
     }
