@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    
+
     tools {
-        nodejs 'NodeJS' 
+        nodejs 'Node18'   // ← changed from 'NodeJS' to 'Node18'
     }
 
     stages {
