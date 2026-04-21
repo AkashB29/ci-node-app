@@ -1,44 +1,33 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Node18'
-    }
-
     stages {
-
         stage('Clone Repository') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/AkashB29/ci-node-app.git'
+                git clone 'https://github.com/AkashB29/ci-node-app.git'
             }
         }
-
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
             }
         }
-
-        stage('Run Tests') {
+        stage('Run Application') {
             steps {
-                bat 'npm test'
+                bat 'node app.js'
             }
         }
-
-        stage('Build Application') {
+        stage('Run Tests') {
             steps {
-                echo 'Build Completed'
+                bat 'node test'
             }
         }
     }
-
-    post {
-        success {
+    post{
+        success{
             echo 'CI Pipeline Success'
         }
-
-        failure {
+        failure{
             echo 'CI Pipeline Failed'
         }
     }
