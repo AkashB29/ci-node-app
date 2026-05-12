@@ -1,7 +1,9 @@
 const add = require("./app.js");
 
 if (add(2, 3) === 5) {
-  console.log("Test passed: add(2,3) returns 5");
+  console.log("Test Passed");
+  process.exit(0);
 } else {
-  console.log("test failed: add(2,3) does not return 5");
+  console.log("Test Failed");
+  process.exit(1);
 }

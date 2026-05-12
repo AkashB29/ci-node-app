@@ -2,6 +2,7 @@ function add(a, b) {
   return a + b;
 }
 
-console.log(add(2, 3));
+console.log("App Running...");
+console.log("Addition Result:", add(2, 3));
 
-module.export = add;
+module.exports = add;
