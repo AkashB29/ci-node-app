@@ -1,7 +1,6 @@
 {
   "name": "ci-node-app",
   "version": "1.0.0",
-  "description": "A simple Node.js application for CI/CD pipeline demonstration",
   "scripts": {
     "start": "node app.js",
     "test": "node test.js"
