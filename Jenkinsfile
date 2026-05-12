@@ -30,7 +30,7 @@ pipeline {
  
   stage('Build Docker Image') { 
    steps { 
-    bat 'docker build -t ci-node-app .' 
+    bat 'docker build -t ci-node-app1 .' 
    } 
   } 
  
